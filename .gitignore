@@ -1,0 +1,10 @@
+bin
+target
+.classpath
+.project
+.settings
+src/main/webapp/META-INF
+.idea
+*.iml
+blockchain-api/node_modules
+docker/mysql_data
