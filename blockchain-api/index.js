@@ -1,10 +1,10 @@
-var restify = require('restify');
-
-const {registerBlockchain} = require('./sawtooth/client');
-const processor = require('./sawtooth/processor');
-const {VoteHandler} = require('./sawtooth/voteHandler');
+const restify = require('restify');
 const request = require('request');
-const {searchBlockchain} = require('./sawtooth/infra');
+
+const { registerBlockchain } = require('./sawtooth/client');
+const processor = require('./sawtooth/processor');
+const { VoteHandler } = require('./sawtooth/voteHandler');
+const { searchBlockchain } = require('./sawtooth/infra');
 
 processor(new VoteHandler());
 
@@ -17,15 +17,15 @@ function registerVote(req, res, next) {
 }
 
 function search(req, res, next) {
-    const address = req.params.address;
+  const address = req.params.address;
 
-    searchBlockchain(address,(votes) => {
-      res.send(votes);
-      next();
-    });
-  }
+  searchBlockchain(address, votes => {
+    res.send(votes);
+    next();
+  });
+}
 
-var server = restify.createServer();
+const server = restify.createServer();
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.bodyParser());
 

@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "cbor": "4.0.0",
-    "nodemon": "^1.13.3",
+    "nodemon": "^1.18.4",
     "redux": "3.7.2",
     "request": "2.83.0",
     "restify": "6.3.4",
