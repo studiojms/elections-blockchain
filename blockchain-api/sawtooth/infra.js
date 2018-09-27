@@ -126,4 +126,4 @@ function buildSawtoothPackage(payloadBytes, privateKey) {
   return batchBytes;
 }
 
-module.exports = { buildSawtoothPackage, sendToSawtoothApi, handlerInfo, calculateVoteAddress, searchBlockchain };
+module.exports = { buildSawtoothPackage, sendToSawtoothApi, handlerInfo, calculateVoteAddress, searchBlockchain, getAddress };
